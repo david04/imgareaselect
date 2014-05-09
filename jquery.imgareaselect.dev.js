@@ -313,6 +313,18 @@ $.imgAreaSelect = function (img, options) {
     }
 
     /**
+     * Removes the selection tool from the DOM.
+     */
+    function destroy() {
+        $box.remove();
+        $area.remove();
+        $border.remove();
+        $outer.remove();
+        $handles.remove();
+        if (opera) $areaOpera.remove();
+    }
+    
+    /**
      * Update plugin elements
      * 
      * @param resetKeyPress
@@ -1069,6 +1081,11 @@ $.imgAreaSelect = function (img, options) {
      * Cancel selection
      */
     this.cancelSelection = cancelSelection;
+    
+    /**
+     * Destroy
+     */
+    this.destroy = destroy;
     
     /**
      * Update plugin elements
